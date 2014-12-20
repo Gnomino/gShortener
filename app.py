@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 from flask import Flask, render_template, url_for, redirect,Response,request,flash,abort
 from random import choice
 from urllib.parse import urlparse
@@ -55,5 +56,5 @@ def short_url(uid):
 app.debug = True
 if __name__ == '__main__':
 	if config['ssl']['enable']:
-		app.run(ssl_context=(config['ssl']['cert'],config['ssl']['key']))
-	app.run()
+		app.run(host=config['host'], port=config['port'], ssl_context=(config['ssl']['cert'],config['ssl']['key']))
+	app.run(host=config['host'], port=config['port'])
