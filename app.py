@@ -48,11 +48,11 @@ def shorten_json():
 	return Response(json.dumps(data), mimetype='application/json')
 @app.route('/<uid>')
 def short_url(uid):
-	url = r.get('url:' + uid).decode("utf-8")
+	url = r.get('url:' + uid)
 	if url == None:
 		return abort(404)
 	else:
-		return redirect(url)
+		return redirect(url.decode("utf-8"))
 app.debug = True
 if __name__ == '__main__':
 	if config['ssl']['enable']:
