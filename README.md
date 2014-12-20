@@ -5,9 +5,7 @@ gShortener is a  lightweight and simple URL shortener written in Python, using F
 Instructions to install it to the gShortener directory :
 
     pip install redis Flask
-    wget https://github.com/Gnomino/gShortener/archive/master.tar.gz -O gShortener.tar.gz
-    tar xzvf gShortener.tar.gz
-    mv gShortener-master gShortener
+    git clone git@github.com:Gnomino/gShortener.git
 
 You'll probably want to edit config.json to set up Redis.
 
