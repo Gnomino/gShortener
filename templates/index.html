@@ -1,0 +1,27 @@
+{% set title="gShortener" %}
+{% extends "layout.html" %}
+{% block body %}
+<div class="ui page grid">
+  <div class="row">
+    <div class="column">
+      <div class="ui message main" style="">
+        <h1 class="ui header">gShortener</h1>
+        <p>Shorten a long URL into a short one such as <span class="ui teal label">{{ request.url_root }}vokvOl</span></p>
+        <a class="ui blue button">Learn more &raquo;</a>
+      </div>
+      <div id="message_place"{% if uid is defined %} class="ui positive message">Here is your short URL : <span class="ui purple label">{{ request.url_root }}{{ uid }}</span>{%else%}>{% endif %}</div>
+      <form action="{{ url_for('shorten') }}" method="post" class="ui form segment" id="shorten_form">
+      <h4 class="ui dividing header">Shorten a URL : </h4>
+      	<div class="field">
+		  <input value="http://" name="url" type="url" id="url">
+		</div>
+		<button class="ui orange button" type="submit">
+			<i class="ui cut icon"></i> Shorten
+		</button>
+      </form>
+    </div>
+  </div>
+</div>
+<script src="{{ url_for('static', filename='jquery.js') }}"></script>
+<script src="{{ url_for('static', filename='index.js') }}"></script>
+{% endblock %}
