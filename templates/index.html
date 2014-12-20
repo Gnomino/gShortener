@@ -7,7 +7,7 @@
       <div class="ui message main" style="">
         <h1 class="ui header">gShortener</h1>
         <p>Shorten a long URL into a short one such as <span class="ui teal label">{{ request.url_root }}vokvOl</span></p>
-        <a class="ui blue button">Learn more &raquo;</a>
+        <a class="ui blue button" href="https://github.com/Gnomino/gShortener">Learn more &raquo;</a>
       </div>
       <div id="message_place"{% if uid is defined %} class="ui positive message">Here is your short URL : <span class="ui purple label">{{ request.url_root }}{{ uid }}</span>{%else%}>{% endif %}</div>
       <form action="{{ url_for('shorten') }}" method="post" class="ui form segment" id="shorten_form">
